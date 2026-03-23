@@ -1,7 +1,7 @@
 {
   "name": "@stackcanon/cli",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Stack-aware governance installer for existing JavaScript and TypeScript projects.",
   "packageManager": "pnpm@8.15.3",
   "type": "module",
