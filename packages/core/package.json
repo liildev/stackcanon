@@ -1,0 +1,29 @@
+{
+  "name": "@stackcanon/core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@stackcanon/ai-engine": "workspace:*",
+    "@stackcanon/detectors": "workspace:*",
+    "@stackcanon/framework-adapters": "workspace:*",
+    "@stackcanon/packs": "workspace:*",
+    "@stackcanon/quality-adapters": "workspace:*",
+    "@stackcanon/tooling-registry": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx ./src/index.ts",
+    "lint": "node -e \"console.log('packages/core lint placeholder')\"",
+    "test": "node --import tsx --test ./test/**/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

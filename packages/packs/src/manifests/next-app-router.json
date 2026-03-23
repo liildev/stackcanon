@@ -1,0 +1,15 @@
+{
+  "name": "next-app-router",
+  "framework": "next",
+  "versionRange": ">=15 <17",
+  "qualityProviders": [
+    "ultracite",
+    "biome",
+    "oxlint",
+    "skip"
+  ],
+  "sources": [
+    "https://nextjs.org/docs/app/guides/ai-agents"
+  ],
+  "lastReviewed": "2026-03-22"
+}

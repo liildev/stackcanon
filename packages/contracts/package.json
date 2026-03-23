@@ -1,0 +1,24 @@
+{
+  "name": "@stackcanon/contracts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@stackcanon/core": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx ./src/index.ts",
+    "lint": "node -e \"console.log('packages/contracts lint placeholder')\"",
+    "test": "node -e \"console.log('packages/contracts test placeholder')\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2022"
+    ],
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@stackcanon/ai-engine": [
+        "packages/ai-engine/src/index.ts"
+      ],
+      "@stackcanon/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@stackcanon/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@stackcanon/detectors": [
+        "packages/detectors/src/index.ts"
+      ],
+      "@stackcanon/framework-adapters": [
+        "packages/framework-adapters/src/index.ts"
+      ],
+      "@stackcanon/packs": [
+        "packages/packs/src/index.ts"
+      ],
+      "@stackcanon/quality-adapters": [
+        "packages/quality-adapters/src/index.ts"
+      ],
+      "@stackcanon/tooling-registry": [
+        "packages/tooling-registry/src/index.ts"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@stackcanon/packs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@stackcanon/detectors": "workspace:*",
+    "@stackcanon/quality-adapters": "workspace:*",
+    "@stackcanon/tooling-registry": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx ./src/index.ts",
+    "lint": "node -e \"console.log('packages/packs lint placeholder')\"",
+    "test": "node -e \"console.log('packages/packs test placeholder')\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

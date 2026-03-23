@@ -1,0 +1,21 @@
+{
+  "name": "@stackcanon/tooling-registry",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx ./src/index.ts",
+    "lint": "node -e \"console.log('packages/tooling-registry lint placeholder')\"",
+    "test": "node -e \"console.log('packages/tooling-registry test placeholder')\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

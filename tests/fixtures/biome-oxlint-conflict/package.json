@@ -1,0 +1,14 @@
+{
+  "name": "biome-oxlint-conflict",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "vite": "^7.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "oxlint": "^1.15.0"
+  }
+}

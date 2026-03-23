@@ -1,0 +1,11 @@
+{
+  "name": "tanstack-query-unsupported-major",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "@tanstack/react-query": "^6.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite": "^7.0.0"
+  }
+}

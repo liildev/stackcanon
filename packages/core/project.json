@@ -1,0 +1,43 @@
+{
+  "name": "@stackcanon/core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm build",
+        "cwd": "packages/core"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dev",
+        "cwd": "packages/core"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm lint",
+        "cwd": "packages/core"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm test",
+        "cwd": "packages/core"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm typecheck",
+        "cwd": "packages/core"
+      }
+    }
+  }
+}

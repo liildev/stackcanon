@@ -1,0 +1,60 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/tsconfig.json"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/pnpm-workspace.yaml",
+      "{workspaceRoot}/nx.json"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "typecheck": {
+      "inputs": [
+        "default",
+        "^default"
+      ],
+      "dependsOn": [
+        "^typecheck"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "^default"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^default"
+      ]
+    }
+  }
+}

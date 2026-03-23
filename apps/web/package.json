@@ -1,0 +1,16 @@
+{
+  "name": "@stackcanon/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@stackcanon/contracts": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx ./src/server.ts",
+    "lint": "node -e \"console.log('apps/web lint placeholder')\"",
+    "test": "node --import tsx --test ./test/**/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

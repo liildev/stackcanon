@@ -1,0 +1,43 @@
+{
+  "name": "@stackcanon/detectors",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/detectors/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm build",
+        "cwd": "packages/detectors"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dev",
+        "cwd": "packages/detectors"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm lint",
+        "cwd": "packages/detectors"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm test",
+        "cwd": "packages/detectors"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm typecheck",
+        "cwd": "packages/detectors"
+      }
+    }
+  }
+}

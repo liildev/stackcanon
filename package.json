@@ -1,0 +1,25 @@
+{
+  "name": "stackcanon",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.15.3",
+  "scripts": {
+    "build": "node ./scripts/run-workspace-target.mjs build",
+    "changeset": "changeset",
+    "dev": "NX_DAEMON=false nx run-many -t dev --all --parallel",
+    "lint": "node ./scripts/run-workspace-target.mjs lint",
+    "release:prepare": "pnpm typecheck && pnpm test && pnpm build && pnpm --filter @stackcanon/cli smoke:bundle && pnpm --filter @stackcanon/cli pack:dry-run && pnpm --filter @stackcanon/cli smoke:tarball",
+    "release:status": "node ./scripts/release-status.mjs",
+    "version-packages": "changeset version",
+    "test": "node ./scripts/run-workspace-target.mjs test",
+    "typecheck": "node ./scripts/run-workspace-target.mjs typecheck",
+    "nx": "NX_DAEMON=false nx"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^22.14.1",
+    "nx": "^20.6.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

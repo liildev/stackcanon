@@ -1,0 +1,45 @@
+{
+  "name": "@stackcanon/cli",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "stackcn": "./dist/bin/stackcn.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stackcanon/contracts": "workspace:*",
+    "@stackcanon/core": "workspace:*",
+    "tsup": "^8.5.0"
+  },
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "dev": "node --import tsx ./src/bin/stackcn.ts",
+    "lint": "node -e \"console.log('packages/cli lint placeholder')\"",
+    "pack:dry-run": "node ./scripts/pack-dry-run.mjs",
+    "prepack": "pnpm run build",
+    "smoke:bundle": "node ./dist/bin/stackcn.js help",
+    "smoke:tarball": "node ./scripts/smoke-tarball.mjs",
+    "test": "node --import tsx --test ./test/**/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}

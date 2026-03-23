@@ -1,0 +1,3 @@
+version: 1
+project: "custom-ai"
+source_of_truth: "ai/"
