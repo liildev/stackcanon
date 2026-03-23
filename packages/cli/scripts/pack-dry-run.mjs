@@ -3,6 +3,13 @@ import { spawn } from "node:child_process";
 const env = { ...process.env };
 delete env.npm_config_recursive;
 
+for (const key of Object.keys(env)) {
+  const normalized = key.toLowerCase();
+  if (normalized.includes("stackcanon") && normalized.includes("registry")) {
+    delete env[key];
+  }
+}
+
 await new Promise((resolve, reject) => {
   const child = spawn("npm", ["pack", "--dry-run", "--cache", "./.npm-cache"], {
     stdio: "inherit",

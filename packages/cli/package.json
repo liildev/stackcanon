@@ -2,13 +2,17 @@
   "name": "@stackcanon/cli",
   "private": false,
   "version": "0.1.0",
+  "description": "Stack-aware governance installer for existing JavaScript and TypeScript projects.",
   "type": "module",
   "bin": {
-    "stackcn": "./dist/bin/stackcn.js"
+    "stackcn": "dist/bin/stackcn.js"
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "README.md",
+    "LICENSE"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,6 +24,36 @@
   },
   "engines": {
     "node": ">=22.14.0"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "agile",
+    "biome",
+    "cli",
+    "configuration",
+    "governance",
+    "javascript",
+    "nextjs",
+    "nuxt",
+    "oxlint",
+    "stackcanon",
+    "stackcn",
+    "tanstack",
+    "typescript",
+    "ultracite",
+    "vite"
+  ],
+  "license": "MIT",
+  "author": "Nozim Mansurov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liildev/stackcanon.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/liildev/stackcanon/tree/main/packages/cli#readme",
+  "bugs": {
+    "url": "https://github.com/liildev/stackcanon/issues"
   },
   "publishConfig": {
     "access": "public",
