@@ -2,7 +2,7 @@
 
 ## Current State
 
-`StackCanon` has a working monorepo, testable CLI flows, and a bundling path for publishing `@stackcanon/cli`.
+`StackCanon` has a working monorepo, testable CLI flows, and a root-level publishing layout for `@stackcanon/cli`.
 
 ## What Is Ready
 
@@ -24,6 +24,7 @@ Reason:
 
 - workspace packages remain split for architecture and tests
 - `packages/cli/tsup.config.ts` bundles internal `@stackcanon/*` runtime imports
+- the published package now ships from the repo root and copies bundled output from `packages/cli/dist`
 - `@stackcanon/cli` keeps workspace packages in `devDependencies`, not publish-time runtime dependencies
 - release PR workflow lives in `.github/workflows/release-pr.yml`
 - trusted publish workflow lives in `.github/workflows/publish-cli.yml`
@@ -37,8 +38,6 @@ Reason:
 4. merge the release PR
 5. run `.github/workflows/publish-cli.yml` through tag or manual trigger after npm trusted publisher is configured
 
-The repo can keep `@stackcanon/cli` at an unreleased baseline version while the pending changeset describes the first public cut.
-
 Prepared first-release notes live in `docs/releases/0.1.0.md` and `docs/releases/0.1.0-announcement.md`.
 
 ## Pre-Publish Checklist
@@ -47,7 +46,7 @@ Prepared first-release notes live in `docs/releases/0.1.0.md` and `docs/releases
 - add release automation for versioning
 - configure npm trusted publisher for `.github/workflows/publish-cli.yml`
 - run real smoke checks for:
-  - local tarball install via `pnpm --filter @stackcanon/cli smoke:tarball`
+  - local tarball install via `pnpm smoke:tarball`
   - `stackcn generate --target ai-rulez --run-ai-rulez`
   - `stackcn sync`
   - `stackcn init --apply --install`

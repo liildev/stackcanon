@@ -166,6 +166,16 @@ test("createInitPlan resolves Fastify pack and backend runtime scripts", async (
   assert.ok(plan.packageJson.scripts.includes("start=tsx src/server.ts"));
 });
 
+test("createInitPlan validates React + Vite on Vite 8", async () => {
+  const plan = await createInitPlan({
+    root: path.join(fixturesRoot, "vite-react-v8")
+  });
+
+  assert.equal(plan.framework, "vite-react");
+  assert.equal(plan.manifest.pack?.name, "React + Vite");
+  assert.equal(plan.manifest.pack?.compatibilityMode ?? false, false);
+});
+
 test("generateOutputs rewrites stackcn-managed AGENTS.md", async () => {
   const tempRoot = await createTempFixtureCopy("next-basic");
 

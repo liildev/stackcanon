@@ -1,6 +1,6 @@
-# @stackcanon/cli
+# @stackcanon/cli-workspace
 
-`stackcn` is the StackCanon CLI for existing JavaScript and TypeScript projects.
+Internal StackCanon CLI workspace package. The publishable npm package now lives at the repository root as `@stackcanon/cli`.
 
 ## Install
 

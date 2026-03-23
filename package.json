@@ -1,15 +1,75 @@
 {
-  "name": "stackcanon",
-  "private": true,
-  "version": "0.1.0",
+  "name": "@stackcanon/cli",
+  "private": false,
+  "version": "0.1.1",
+  "description": "Stack-aware governance installer for existing JavaScript and TypeScript projects.",
   "packageManager": "pnpm@8.15.3",
+  "type": "module",
+  "bin": {
+    "stackcn": "dist/bin/stackcn.js"
+  },
+  "files": [
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "biome",
+    "cli",
+    "configuration",
+    "governance",
+    "javascript",
+    "nextjs",
+    "nuxt",
+    "oxlint",
+    "stackcanon",
+    "stackcn",
+    "tanstack",
+    "typescript",
+    "ultracite",
+    "vite"
+  ],
+  "license": "MIT",
+  "author": "Nozim Mansurov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liildev/stackcanon.git"
+  },
+  "homepage": "https://github.com/liildev/stackcanon#readme",
+  "bugs": {
+    "url": "https://github.com/liildev/stackcanon/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "node ./scripts/run-workspace-target.mjs build",
+    "build:publish": "pnpm --filter @stackcanon/cli-workspace build && node ./scripts/prepare-root-publish.mjs",
     "changeset": "changeset",
     "dev": "NX_DAEMON=false nx run-many -t dev --all --parallel",
     "lint": "node ./scripts/run-workspace-target.mjs lint",
-    "release:prepare": "pnpm typecheck && pnpm test && pnpm build && pnpm --filter @stackcanon/cli smoke:bundle && pnpm --filter @stackcanon/cli pack:dry-run && pnpm --filter @stackcanon/cli smoke:tarball",
+    "pack:dry-run": "node ./scripts/pack-publish-dry-run.mjs",
+    "prepack": "pnpm run build:publish",
+    "release:prepare": "pnpm typecheck && pnpm test && pnpm build && pnpm run pack:dry-run && pnpm run smoke:tarball",
     "release:status": "node ./scripts/release-status.mjs",
+    "smoke:bundle": "node ./dist/bin/stackcn.js help",
+    "smoke:tarball": "node ./scripts/smoke-publish-tarball.mjs",
     "version-packages": "changeset version",
     "test": "node ./scripts/run-workspace-target.mjs test",
     "typecheck": "node ./scripts/run-workspace-target.mjs typecheck",

@@ -8,6 +8,7 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "@stackcanon/cli-workspace",
     "@stackcanon/ai-engine",
     "@stackcanon/contracts",
     "@stackcanon/core",

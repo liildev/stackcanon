@@ -1,8 +1,8 @@
 {
-  "name": "@stackcanon/cli",
-  "private": false,
+  "name": "@stackcanon/cli-workspace",
+  "private": true,
   "version": "0.1.1",
-  "description": "Stack-aware governance installer for existing JavaScript and TypeScript projects.",
+  "description": "Internal StackCanon CLI workspace package.",
   "type": "module",
   "bin": {
     "stackcn": "dist/bin/stackcn.js"
@@ -24,40 +24,6 @@
   },
   "engines": {
     "node": ">=22.14.0"
-  },
-  "keywords": [
-    "ai",
-    "agents",
-    "agile",
-    "biome",
-    "cli",
-    "configuration",
-    "governance",
-    "javascript",
-    "nextjs",
-    "nuxt",
-    "oxlint",
-    "stackcanon",
-    "stackcn",
-    "tanstack",
-    "typescript",
-    "ultracite",
-    "vite"
-  ],
-  "license": "MIT",
-  "author": "Nozim Mansurov",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/liildev/stackcanon.git",
-    "directory": "packages/cli"
-  },
-  "homepage": "https://github.com/liildev/stackcanon/tree/main/packages/cli#readme",
-  "bugs": {
-    "url": "https://github.com/liildev/stackcanon/issues"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
   },
   "dependencies": {},
   "devDependencies": {
