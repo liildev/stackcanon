@@ -1,7 +1,7 @@
 {
   "name": "@stackcanon/cli",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "bin": {
     "stackcn": "./dist/bin/stackcn.js"
